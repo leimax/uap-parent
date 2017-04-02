@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- 统一公共配置 -->
+    <bean id="configObjectMapper" class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean"
+          p:serializationInclusion="NON_EMPTY"
+          p:indentOutput="false"/>
+    <bean id="mixturePlaceholderConfigurer" class="com.deppon.uap.framework.config.MixturePlaceholderConfigurer"
+          p:objectMapper-ref="configObjectMapper"
+          p:location="classpath:framework.properties"
+          p:fileEncoding="UTF-8"/>
+    <bean id="configPropertyResolver" factory-bean="mixturePlaceholderConfigurer" factory-method="getPropertyResolver"/>
+
+    <!-- 持有Spring Application Context -->
+    <bean id="applicationContextHolder" class="com.deppon.uap.framework.spring.ApplicationContextHolder"/>
+
+    <!-- Jackson默认JSON转换类 -->
+    <bean id="defaultObjectMapper" class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean"
+          p:serializationInclusion="NON_EMPTY"
+          p:simpleDateFormat="yyyy-MM-dd HH:mm:ss"
+          p:indentOutput="true"/>
+
+    <!-- Bean注解扫描包支持 -->
+    <context:component-scan base-package="com.deppon.uap">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!-- Mybatis支持 -->
+    <jee:jndi-lookup id="dataSource" resource-ref="true" jndi-name="jdbc/uap"/>
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="mapperLocations" value="classpath:META-INF/mybatis/*.xml"/>
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <property name="basePackage" value="com.deppon.uap.*.model.mapper"/>
+    </bean>
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!--Codis缓存支持-->
+    <!--
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig"
+          p:maxWaitMillis="${codis.pool.maxWaitMillis}"
+          p:maxTotal="${codis.pool.maxTotal}"
+          p:maxIdle="${codis.pool.maxIdle}"
+          p:testOnBorrow="${codis.pool.testOnBorrow}"
+          p:testOnReturn="${codis.pool.testOnReturn}"/>
+    <bean id="codisPool" class="com.deppon.uap.framework.cache.CodisPoolFactoryBean"
+          p:poolConfig-ref="jedisPoolConfig"
+          p:zkSessionTimeout="${codis.zkSessionTimeout}"
+          p:zkConnectString="${codis.zkConnectString}"
+          p:zkPath="${codis.zkPath}"/>
+    <bean id="cacheHelper" class="com.deppon.uap.framework.cache.CacheHelper"
+          p:codisPool-ref="codisPool"/>
+    -->
+</beans>

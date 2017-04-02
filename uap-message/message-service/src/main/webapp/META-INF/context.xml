@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context>
+    <Resource name="jdbc/uap"
+              auth="Container"
+              type="javax.sql.DataSource"
+              driverClassName="com.mysql.jdbc.Driver"
+              maxIdle="2"
+              maxActive="2"
+              url="jdbc:mysql://127.0.0.1:3306/uap"
+              username="root"
+              password="root"
+    />
+</Context>
