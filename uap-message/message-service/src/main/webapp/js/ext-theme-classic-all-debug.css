@@ -14279,7 +14279,7 @@ textarea.x-form-empty-field {
 .x-form-checkbox {
     width: 13px;
     height: 13px;
-    background: url(images/form/checkbox.gif) no-repeat;
+    background: url(checkbox.gif) no-repeat;
 }
 
 /* line 25, ../../../ext-theme-neutral/sass/src/form/field/Checkbox.scss */
@@ -14525,7 +14525,7 @@ textarea.x-form-empty-field {
 .x-form-radio {
     width: 13px;
     height: 13px;
-    background: url(images/form/radio.gif) no-repeat;
+    background: url(radio.gif) no-repeat;
 }
 
 /* line 7, ../../../ext-theme-neutral/sass/src/form/field/Radio.scss */
@@ -15763,7 +15763,7 @@ a.x-color-picker-item:hover {
 .x-grid-checkcolumn {
     width: 13px;
     height: 13px;
-    background: url(images/form/checkbox.gif) 0 0 no-repeat;
+    background: url(checkbox.gif) 0 0 no-repeat;
 }
 
 /* line 17, ../../../ext-theme-neutral/sass/src/grid/column/CheckColumn.scss */
@@ -19480,7 +19480,7 @@ body.x-nbr .x-tab-default-right-frameInfo {
 .x-column-header-checkbox .x-column-header-text {
     height: 13px;
     width: 13px;
-    background-image: url(images/form/checkbox.gif);
+    background-image: url(checkbox.gif);
     line-height: 13px;
 }
 
@@ -19619,7 +19619,7 @@ body.x-nbr .x-tab-default-right-frameInfo {
     top: 4px;
     width: 13px;
     height: 13px;
-    background-image: url(images/form/checkbox.gif);
+    background-image: url(checkbox.gif);
 }
 
 /* line 196, ../../../ext-theme-neutral/sass/src/tree/Panel.scss */

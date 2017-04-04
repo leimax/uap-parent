@@ -2,14 +2,30 @@ Ext.onReady(function () {
     var win,
         button = Ext.get('show-btn');
 
-
     addbutton = Ext.get('add-btn');
 
+    var myCheckboxGroup = new Ext.form.CheckboxGroup({
+        id: 'myGroup',
+        xtype: 'checkboxgroup',
+        fieldLabel: 'Single Column',
+        itemCls: 'x-check-group-alt',
+        columns: 3,
+        items: [
+            {boxLabel: '唱歌', name: '1'},
+            {boxLabel: '游泳', name: '2', checked: true},
+            {boxLabel: '看书', name: '3'},
+            {boxLabel: '旅游', name: '4'},
+            {boxLabel: '游戏', name: '5'},
+            {boxLabel: '睡觉', name: '6'}
+        ]
+    });
 
     var checkboxext = Ext.create('Ext.form.Panel', {
+        id: 'checkboxextcss',
         title: 'Pizza Order',
         items: [
             {
+                id: 'csscheckbox',
                 xtype: 'fieldcontainer',
                 fieldLabel: 'Toppings',
                 defaultType: 'checkboxfield',
@@ -31,7 +47,9 @@ Ext.onReady(function () {
                         inputValue: '3',
                         id: 'checkbox3'
                     }
+
                 ]
+
             }
         ],
         bbar: [
@@ -56,6 +74,126 @@ Ext.onReady(function () {
                     Ext.getCmp('checkbox1').setValue(false);
                     Ext.getCmp('checkbox2').setValue(false);
                     Ext.getCmp('checkbox3').setValue(false);
+                }
+            }
+        ]
+    });
+
+
+    var checkboxext1 = Ext.create('Ext.form.Panel', {
+        id: 'checkboxextcss',
+        title: 'Pizza Order',
+        //itemCls: 'x-check-group-alt',
+        //layout : 'fit',
+        //height : 500,
+        items: [
+            {
+                id: 'csscheckbox',
+                xtype: 'fieldcontainer',
+                fieldLabel: 'Toppings',
+                defaultType: 'checkboxfield',
+                //items: []
+                listeners: {
+                    render: function () {
+                        Ext.Ajax.request(
+                            {
+                                url: '/message-service/perMesCheckboxController/queryCheckboxByEmpCode',
+                                method: 'POST',
+                                params: {
+                                    key: 1
+                                },
+                                success: function (response) {
+                                    fc = Ext.getCmp('csscheckbox');
+                                    fc.removeAll();
+                                    var message = eval('(' + response.responseText + ')');
+                                    var i = 0;
+                                    for (i; i < message.length; i++) {
+                                        var items = {
+                                            checked: message[i].checked,
+                                            boxLabel: message[i].boxLabel,
+                                            name: message[i].name,
+                                            inputValue: message[i].inputValue,
+                                            id: message[i].id
+                                        };
+                                        fc.add(items);
+                                        fc.doLayout();
+                                    }
+                                },
+                                failure: function (resp, opts) {
+                                    var respText = Ext.decode(resp.responseText);
+                                }
+
+                            }
+                        )
+                    }
+                }
+            }
+        ],
+        bbar: [
+            {
+                text: 'Select Bacon',
+                handler: function () {
+                    //Ext.getCmp('checkbox3').setValue(true);
+                    for (var i = 0; i < Ext.getCmp('csscheckbox').items.length; i++) {
+                        if (Ext.getCmp('csscheckbox').items.getAt(i).checked) {
+                            alert(Ext.getCmp('csscheckbox').items.getAt(i).name);
+                        }
+                    }
+                }
+            },
+            '-',
+            {
+                text: 'Select All',
+                handler: function () {
+                    Ext.getCmp('checkbox1').setValue(true);
+                    Ext.getCmp('checkbox2').setValue(true);
+                    Ext.getCmp('checkbox3').setValue(true);
+                }
+            },
+            {
+                text: 'Deselect All',
+                handler: function () {
+                    Ext.getCmp('checkbox1').setValue(false);
+                    Ext.getCmp('checkbox2').setValue(false);
+                    Ext.getCmp('checkbox3').setValue(false);
+                }
+            },
+            {
+                text: 'Submit',
+                handler: function () {
+                    var checkboxext11 = "{";
+                    var updatedate = "";
+                    Ext.getCmp('csscheckbox').items.each(
+                        function (field) {
+                            checkboxext11 += field.name;
+                            checkboxext11 += ":'" + field.inputValue + "'";
+                            checkboxext11 += ",";
+                            updatedate += field.name
+                            updatedate += ":";
+
+                        }
+                    );
+                    checkboxext11 = checkboxext11.substring(0, checkboxext11.length - 1);
+                    checkboxext11 += "}";
+                    updatedate = updatedate.substring(0, updatedate.length - 1);
+                    Ext.Ajax.request(
+                        {
+                            url: '/message-service/perMesCheckboxController/submitCheckbox',
+                            method: 'POST',
+                            params: {
+                                key: updatedate
+                            },
+                            success: function (response) {
+
+                                //alert(response.responseText);
+
+                            },
+                            failure: function (resp, opts) {
+                                var respText = Ext.decode(resp.responseText);
+                            }
+
+                        }
+                    )
                 }
             }
         ]
@@ -144,27 +282,15 @@ Ext.onReady(function () {
                         listeners: {activate: handleActivate},
                         html: 'Hello world 2'
                     }, {
+                        id: 'cssidthree',
                         //cls:  'myCls',
                         //style:'color:red;background:green;' ,
                         //draggable: true,
                         title: '三',
                         //html: 'Hello world 3',
-                        items:[
-                            {
-                                xtype:"radio",
-                                name:"sex",
-                                fieldLabel:"性别",
-                                boxLabel:"男"
-                            }, {
-                                xtype: "checkboxfield",
-                                name: "swim",
-                                fieldLabel: "爱好",
-                                boxLabel: "游泳"
-                            }
+                        //items:[{xtype: "checkboxfield",name: "swim", fieldLabel: "爱好", boxLabel: "游泳"}],
+                        items: [checkboxext1],
 
-
-                        ],
-                        //items: [checkboxext],
                         closable: true
 
                     }, {
