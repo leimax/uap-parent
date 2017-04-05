@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="menu-sync-job:war">
+    <output-path>$PROJECT_DIR$/uap-menu/menu-sync-job/target</output-path>
+    <root id="archive" name="menu-sync-job.war">
+      <element id="artifact" artifact-name="menu-sync-job:war exploded" />
+    </root>
+  </artifact>
+</component>

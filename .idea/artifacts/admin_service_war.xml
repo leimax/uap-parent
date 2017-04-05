@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="admin-service:war">
+    <output-path>$PROJECT_DIR$/uap-admin/admin-service/target</output-path>
+    <root id="archive" name="admin-service.war">
+      <element id="artifact" artifact-name="admin-service:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/uap-admin/admin-interface/admin-interface.iml" filepath="$PROJECT_DIR$/uap-admin/admin-interface/admin-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-admin/admin-service/admin-service.iml" filepath="$PROJECT_DIR$/uap-admin/admin-service/admin-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-admin/admin-support/admin-support.iml" filepath="$PROJECT_DIR$/uap-admin/admin-support/admin-support.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-custom/custom-interface/custom-interface.iml" filepath="$PROJECT_DIR$/uap-custom/custom-interface/custom-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-custom/custom-service/custom-service.iml" filepath="$PROJECT_DIR$/uap-custom/custom-service/custom-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-custom/custom-support/custom-support.iml" filepath="$PROJECT_DIR$/uap-custom/custom-support/custom-support.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-log/log-analyze-job/log-analyze-job.iml" filepath="$PROJECT_DIR$/uap-log/log-analyze-job/log-analyze-job.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-log/log-interface/log-interface.iml" filepath="$PROJECT_DIR$/uap-log/log-interface/log-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-log/log-statistics-service/log-statistics-service.iml" filepath="$PROJECT_DIR$/uap-log/log-statistics-service/log-statistics-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-log/log-support/log-support.iml" filepath="$PROJECT_DIR$/uap-log/log-support/log-support.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-menu/menu-core-service/menu-core-service.iml" filepath="$PROJECT_DIR$/uap-menu/menu-core-service/menu-core-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-menu/menu-interface/menu-interface.iml" filepath="$PROJECT_DIR$/uap-menu/menu-interface/menu-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-menu/menu-support/menu-support.iml" filepath="$PROJECT_DIR$/uap-menu/menu-support/menu-support.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-menu/menu-sync-job/menu-sync-job.iml" filepath="$PROJECT_DIR$/uap-menu/menu-sync-job/menu-sync-job.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-menu/menu-user-service/menu-user-service.iml" filepath="$PROJECT_DIR$/uap-menu/menu-user-service/menu-user-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-message/message-interface/message-interface.iml" filepath="$PROJECT_DIR$/uap-message/message-interface/message-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-message/message-service/message-service.iml" filepath="$PROJECT_DIR$/uap-message/message-service/message-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-message/message-support/message-support.iml" filepath="$PROJECT_DIR$/uap-message/message-support/message-support.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-admin/uap-admin.iml" filepath="$PROJECT_DIR$/uap-admin/uap-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-custom/uap-custom.iml" filepath="$PROJECT_DIR$/uap-custom/uap-custom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-framework/uap-framework.iml" filepath="$PROJECT_DIR$/uap-framework/uap-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-log/uap-log.iml" filepath="$PROJECT_DIR$/uap-log/uap-log.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-menu/uap-menu.iml" filepath="$PROJECT_DIR$/uap-menu/uap-menu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-message/uap-message.iml" filepath="$PROJECT_DIR$/uap-message/uap-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uap-parent.iml" filepath="$PROJECT_DIR$/uap-parent.iml" />
+    </modules>
+  </component>
+</project>

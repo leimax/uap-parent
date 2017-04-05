@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="admin-interface" />
+        <module name="admin-service" />
+        <module name="admin-support" />
+        <module name="custom-interface" />
+        <module name="custom-service" />
+        <module name="custom-support" />
+        <module name="log-analyze-job" />
+        <module name="log-interface" />
+        <module name="log-statistics-service" />
+        <module name="log-support" />
+        <module name="menu-core-service" />
+        <module name="menu-interface" />
+        <module name="menu-support" />
+        <module name="menu-sync-job" />
+        <module name="menu-user-service" />
+        <module name="message-interface" />
+        <module name="message-service" />
+        <module name="message-support" />
+        <module name="uap-framework" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.7">
+      <module name="admin-interface" target="1.7" />
+      <module name="admin-service" target="1.7" />
+      <module name="admin-support" target="1.7" />
+      <module name="custom-interface" target="1.7" />
+      <module name="custom-service" target="1.7" />
+      <module name="custom-support" target="1.7" />
+      <module name="log-analyze-job" target="1.7" />
+      <module name="log-interface" target="1.7" />
+      <module name="log-statistics-service" target="1.7" />
+      <module name="log-support" target="1.7" />
+      <module name="menu-core-service" target="1.7" />
+      <module name="menu-interface" target="1.7" />
+      <module name="menu-support" target="1.7" />
+      <module name="menu-sync-job" target="1.7" />
+      <module name="menu-user-service" target="1.7" />
+      <module name="message-interface" target="1.7" />
+      <module name="message-service" target="1.7" />
+      <module name="message-support" target="1.7" />
+      <module name="uap-admin" target="1.7" />
+      <module name="uap-custom" target="1.7" />
+      <module name="uap-framework" target="1.7" />
+      <module name="uap-log" target="1.7" />
+      <module name="uap-menu" target="1.7" />
+      <module name="uap-message" target="1.7" />
+      <module name="uap-parent" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

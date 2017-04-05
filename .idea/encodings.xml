@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-admin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-admin/admin-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-admin/admin-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-admin/admin-support" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-custom" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-custom/custom-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-custom/custom-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-custom/custom-support" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-framework" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-log" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-log/log-analyze-job" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-log/log-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-log/log-statistics-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-log/log-support" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-menu" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-menu/menu-core-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-menu/menu-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-menu/menu-support" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-menu/menu-sync-job" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-menu/menu-user-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-message" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-message/message-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-message/message-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-message/message-service/src/main/webapp/js/layout.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/uap-message/message-support" charset="UTF-8" />
+  </component>
+</project>

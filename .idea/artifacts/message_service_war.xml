@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="message-service:war">
+    <output-path>$PROJECT_DIR$/uap-message/message-service/target</output-path>
+    <root id="archive" name="message-service.war">
+      <element id="artifact" artifact-name="message-service:war exploded" />
+    </root>
+  </artifact>
+</component>

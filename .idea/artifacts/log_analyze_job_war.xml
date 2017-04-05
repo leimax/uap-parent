@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="log-analyze-job:war">
+    <output-path>$PROJECT_DIR$/uap-log/log-analyze-job/target</output-path>
+    <root id="archive" name="log-analyze-job.war">
+      <element id="artifact" artifact-name="log-analyze-job:war exploded" />
+    </root>
+  </artifact>
+</component>

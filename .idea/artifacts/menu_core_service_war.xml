@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="menu-core-service:war">
+    <output-path>$PROJECT_DIR$/uap-menu/menu-core-service/target</output-path>
+    <root id="archive" name="menu-core-service.war">
+      <element id="artifact" artifact-name="menu-core-service:war exploded" />
+    </root>
+  </artifact>
+</component>

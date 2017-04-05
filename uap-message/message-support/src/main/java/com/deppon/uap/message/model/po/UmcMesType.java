@@ -14,6 +14,8 @@ public class UmcMesType extends BaseEntity {
 
     private String mesRed;
 
+    private Integer order;
+
     public String getMesType() {
         return mesType;
     }
@@ -52,5 +54,13 @@ public class UmcMesType extends BaseEntity {
 
     public void setMesRed(String mesRed) {
         this.mesRed = mesRed;
+    }
+
+    public Integer getOrder() {
+        return order;
+    }
+
+    public void setOrder(Integer order) {
+        this.order = order;
     }
 }

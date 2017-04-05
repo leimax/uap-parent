@@ -11,12 +11,12 @@
         <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime"/>
         <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime"/>
         <result column="CREATE_USER" jdbcType="VARCHAR" property="createUser"/>
-        <result column="MODIFY_USER" jdbcType="VARCHAR" property="modifyUser"/>
+        <result column="UPDATE_USER" jdbcType="VARCHAR" property="updateUser"/>
         <result column="EMP_CODE" jdbcType="VARCHAR" property="empCode"/>
     </resultMap>
     <sql id="Base_Column_List">
     ID, MES_TYPE, MES_CODE, MES_NAME, MES_CHECK, ACTIVE, CREATE_TIME, UPDATE_TIME, CREATE_USER, 
-    MODIFY_USER, EMP_CODE
+    UPDATE_USER, EMP_CODE
   </sql>
     <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
         select
@@ -32,11 +32,11 @@
     insert into t_uap_per_mes_type (ID, MES_TYPE, MES_CODE, 
       MES_NAME, MES_CHECK, ACTIVE, 
       CREATE_TIME, UPDATE_TIME, CREATE_USER, 
-      MODIFY_USER, EMP_CODE)
+      UPDATE_USER, EMP_CODE)
     values (#{id,jdbcType=BIGINT}, #{mesType,jdbcType=CHAR}, #{mesCode,jdbcType=VARCHAR}, 
       #{mesName,jdbcType=VARCHAR}, #{mesCheck,jdbcType=CHAR}, #{active,jdbcType=CHAR}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{createUser,jdbcType=VARCHAR}, 
-      #{modifyUser,jdbcType=VARCHAR}, #{empCode,jdbcType=VARCHAR})
+      #{updateUser,jdbcType=VARCHAR}, #{empCode,jdbcType=VARCHAR})
   </insert>
     <insert id="insertSelective" parameterType="com.deppon.uap.message.model.po.PerMesType">
         insert into t_uap_per_mes_type
@@ -68,8 +68,8 @@
             <if test="createUser != null">
                 CREATE_USER,
             </if>
-            <if test="modifyUser != null">
-                MODIFY_USER,
+            <if test="updateUser != null">
+                UPDATE_USER,
             </if>
             <if test="empCode != null">
                 EMP_CODE,
@@ -103,8 +103,8 @@
             <if test="createUser != null">
                 #{createUser,jdbcType=VARCHAR},
             </if>
-            <if test="modifyUser != null">
-                #{modifyUser,jdbcType=VARCHAR},
+            <if test="updateUser != null">
+                #{updateUser,jdbcType=VARCHAR},
             </if>
             <if test="empCode != null">
                 #{empCode,jdbcType=VARCHAR},
@@ -138,8 +138,8 @@
             <if test="createUser != null">
                 CREATE_USER = #{createUser,jdbcType=VARCHAR},
             </if>
-            <if test="modifyUser != null">
-                MODIFY_USER = #{modifyUser,jdbcType=VARCHAR},
+            <if test="updateUser != null">
+                UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
             </if>
             <if test="empCode != null">
                 EMP_CODE = #{empCode,jdbcType=VARCHAR},
@@ -157,7 +157,7 @@
       CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
       UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
       CREATE_USER = #{createUser,jdbcType=VARCHAR},
-      MODIFY_USER = #{modifyUser,jdbcType=VARCHAR},
+      UPDATE_USER = #{updateUser,jdbcType=VARCHAR},
       EMP_CODE = #{empCode,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=BIGINT}
   </update>
