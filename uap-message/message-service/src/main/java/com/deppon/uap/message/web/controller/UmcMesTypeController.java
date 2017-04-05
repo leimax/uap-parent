@@ -22,7 +22,7 @@ public class UmcMesTypeController extends AbstractUapController {
 	@Resource
 	private UmcMesTypeMapper umcMesTypeMapper;
 
-	@RequestMapping(value = "/queryByPrimaryKey", method = RequestMethod.GET)
+	@RequestMapping(value = "/queryByPrimaryKey", method = RequestMethod.POST)
 	public String queryByPrimaryKey(@RequestParam("key") String key, Model model) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("id", Integer.valueOf(key));

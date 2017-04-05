@@ -214,7 +214,7 @@ Ext.onReady(function () {
 
     urlss = 'http://127.0.0.1:8080/bse-business-web/zsource/productDefineIndex.action?standalone&exptoken=NDY5QzcyNUFBMEYyRENFOTIyNTk1MEU2M0IxNDcxNDIsZTI1NTczYWUtYjE5Ni00ZDRmLTk4OTEtNWVjMWFjODMwMjAwLDA4NDU0NCxXMDExMzAyMDIwNTE1LOS4iua1t+mXteihjOWMuua1puaxn+mVh+iQpeS4mumDqCwxNDkwMjU1NDc0OTkx';
     urlcc = 'http://10.226.96.104:8080/bse-business-web/zsource/commonSelectorTestPage.action?standalone&exptoken=NDY5QzcyNUFBMEYyRENFOTIyNTk1MEU2M0IxNDcxNDIsZTI1NTczYWUtYjE5Ni00ZDRmLTk4OTEtNWVjMWFjODMwMjAwLDA4NDU0NCxXMDExMzAyMDIwNTE1LOS4iua1t+mXteihjOWMuua1puaxn+mVh+iQpeS4mumDqCwxNDkwMjU1NDc0OTkx';
-    url = 'www.baidu.com';
+    url = '/message-service/modelController/queryByPrimaryKey?key=1';
 
     addbutton.on('click', function () {
 
@@ -222,7 +222,7 @@ Ext.onReady(function () {
             Ext.getCmp("tabpannel").add({
                 xtype: 'panel',
                 title: 'Tab 1',
-                html: '<iframe scrolling="auto" frameborder="0" width="100%" height="100%" src="' + 'url' + '"> </iframe>',
+                html: '<iframe scrolling="auto" frameborder="0" width="100%" height="100%" src="' + url + '"> </iframe>',
                 //http://www.baidu.com
                 /*
                  loader: {
